@@ -25905,7 +25905,7 @@ namespace Legion {
         {
           if (!use_event.exists() || use_event.has_triggered())
           {
-            assert(false)
+            assert(false);
             task_local_instances[instance] = unique_event;
             return instance;
           }
