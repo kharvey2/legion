@@ -25741,20 +25741,7 @@ namespace Legion {
         {
           if (instance->is_immediate())
           {
-            if (!silence_warnings)
-              REPORT_LEGION_WARNING(LEGION_WARNING_MISSING_ALLOCATION_BOUNDS,
-                    "WARNING! Leaf task %s (UID %lld) attempted to allocate a "
-                    "future instance of %zd bytes in %s memory but no space "
-                    "was reserved for dynamic allocations during "
-                    "the lifetime of this task. Legion has managed to procure "
-                    "for you an allocation this time but there is no guarantee "
-                    "that you will be so lucky the next time. We strongly "
-                    "encourage all users to place tight upper bounds on the "
-                    "required memory for all leaf tasks either statically at "
-                    "the point of task variant registration or dynamically at "
-                    "the point that the task is mapped. Warning string: %s",
-                    get_task_name(), get_unique_id(), size, manager->get_name(),
-                    (warning_string == NULL) ? "" : warning_string)
+            assert(false);
             return instance;
           }
           else
